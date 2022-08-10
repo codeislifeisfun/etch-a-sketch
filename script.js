@@ -24,8 +24,8 @@ function buildGrid(boxesPerRow) {
 
 function resizeGrid(){
     const grid = document.querySelector(".grid");
-    const size = prompt('How many squares per side would you like (5 to 100)?');
-    if (!size || size<5 || size>100) return;
+    const size = +prompt('How many squares per side would you like (5 to 100)?');
+    if (!size || size.isNaN() || size<5 || size>100) return;
     while (grid.firstChild) {
         grid.removeChild(grid.lastChild);
     }
